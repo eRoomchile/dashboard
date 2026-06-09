@@ -7,12 +7,12 @@
   "theme_color": "#0e0b14",
   "icons": [
     {
-      "src": "https://naos76186.github.io/dashboard/logo.jpeg",
+      "src": "https://eroomchile.github.io/dashboard/logo.jpeg",
       "sizes": "192x192",
       "type": "image/jpeg"
     },
     {
-      "src": "https://naos76186.github.io/dashboard/logo.jpeg",
+      "src": "https://eroomchile.github.io/dashboard/logo.jpeg",
       "sizes": "512x512",
       "type": "image/jpeg"
     }
