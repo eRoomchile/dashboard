@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EROOM 통합매출</title>
+
+<link rel="icon" href="https://eroomchile.github.io/dashboard/eroom_icon.png">
+<link rel="apple-touch-icon" href="https://eroomchile.github.io/dashboard/eroom_icon.png">
+<link rel="manifest" href="https://eroomchile.github.io/dashboard/manifest-app.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="EROOM">
+<meta name="theme-color" content="#141033">
+<meta name="mobile-web-app-capable" content="yes">
+
+<style>
+  body{margin:0;background:#141033;color:#9d8fff;font-family:Arial,sans-serif;
+       display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;}
+  img{width:96px;height:96px;border-radius:50%;}
+  p{margin-top:16px;font-size:14px;}
+</style>
+</head>
+<body>
+  <img src="https://eroomchile.github.io/dashboard/eroom_icon.png" alt="EROOM">
+  <p>매출 화면을 여는 중...</p>
+<script>
+  // ★ 아래 따옴표 안에 네 Apps Script 웹앱 URL을 넣어
+  var WEBAPP_URL = "https://script.google.com/macros/s/AKfycbw3XGdYBKn4jSCfTbxmtsCrRxurPqub0veaqauwqOwuZnyiAl9oA2svRX21iXdeOROy-Q/exec";
+  setTimeout(function(){ location.href = WEBAPP_URL; }, 400);
+</script>
+</body>
+</html>
