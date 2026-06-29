@@ -1,0 +1,14 @@
+{
+  "name": "EROOM 통합매출",
+  "short_name": "EROOM",
+  "icons": [
+    {
+      "src": "https://eroomchile.github.io/dashboard/eroom_icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#141033",
+  "background_color": "#141033",
+  "display": "standalone"
+}
