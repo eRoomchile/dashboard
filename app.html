@@ -14,19 +14,51 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <style>
-  body{margin:0;background:#141033;color:#9d8fff;font-family:Arial,sans-serif;
-       display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;}
-  img{width:96px;height:96px;border-radius:50%;}
-  p{margin-top:16px;font-size:14px;}
+  body{margin:0;background:#141033;color:#d6cfff;font-family:Arial,sans-serif;
+       display:flex;flex-direction:column;align-items:center;justify-content:center;
+       height:100vh;}
+  img{width:96px;height:96px;border-radius:50%;margin-bottom:20px;}
+  input{width:200px;padding:12px;font-size:18px;text-align:center;border-radius:8px;
+        border:1px solid #3d3578;background:#1e1a44;color:#d6cfff;margin-bottom:12px;
+        letter-spacing:4px;}
+  button{padding:12px 30px;font-size:16px;border-radius:8px;border:1px solid #6a8fff;
+         background:#1d3a8f;color:#fff;cursor:pointer;}
+  .err{color:#ff8080;font-size:13px;height:18px;margin-top:8px;}
+  .title{font-size:16px;color:#9d8fff;margin-bottom:16px;}
 </style>
 </head>
 <body>
   <img src="https://eroomchile.github.io/dashboard/eroom_icon.png" alt="EROOM">
-  <p>매출 화면을 여는 중...</p>
+  <div class="title">EROOM 통합매출</div>
+  <input id="pw" type="password" inputmode="numeric" placeholder="••••" autofocus>
+  <button onclick="check()">열기</button>
+  <div class="err" id="err"></div>
+
 <script>
-  // ★ 아래 따옴표 안에 네 Apps Script 웹앱 URL을 넣어
-  var WEBAPP_URL = "https://script.google.com/macros/s/AKfycbw3XGdYBKn4jSCfTbxmtsCrRxurPqub0veaqauwqOwuZnyiAl9oA2svRX21iXdeOROy-Q/exec";
-  setTimeout(function(){ location.href = WEBAPP_URL; }, 8000);
+  // ===== 여기 두 개만 바꾸세요 =====
+  var WEBAPP_URL = "https://script.google.com/macros/s/AKfycbw3XGdYBKn4jSCfTbxmtsCrRxurPqub0veaqauwqOwuZnyiAl9oA2svRX21iXdeOROy-Q/exec";   // script.google.com/macros/s/.../exec
+  var PASSWORD   = "0617";                       // 원하는 비번으로 변경
+  // ================================
+
+  // 한 번 맞히면 이 기기에선 다음부터 비번 생략 (선택)
+  if (localStorage.getItem('eroom_ok') === '1') {
+    location.href = WEBAPP_URL;
+  }
+
+  function check(){
+    var v = document.getElementById('pw').value;
+    if (v === PASSWORD) {
+      localStorage.setItem('eroom_ok', '1');
+      location.href = WEBAPP_URL;
+    } else {
+      document.getElementById('err').textContent = '비밀번호가 틀렸습니다';
+      document.getElementById('pw').value = '';
+    }
+  }
+  // 엔터키로도 열기
+  document.getElementById('pw').addEventListener('keydown', function(e){
+    if (e.key === 'Enter') check();
+  });
 </script>
 </body>
 </html>
